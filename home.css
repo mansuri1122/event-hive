@@ -1,0 +1,246 @@
+/* ===== General Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  background: #f8f9fa;
+  color: #333;
+  scroll-behavior: smooth;
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  height: 85vh;
+  overflow: hidden;
+}
+
+.slider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.slides {
+  display: flex;
+  height: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.6);
+}
+
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 2rem;
+  color: white;
+  background: rgba(0,0,0,0.4);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+}
+
+.prev { left: 20px; }
+.next { right: 20px; }
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 3.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.6);
+}
+
+.search-box {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  padding: 15px;
+  border-radius: 10px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.search-box input, .search-box select, .search-box button {
+  padding: 10px 15px;
+  border-radius: 6px;
+  border: none;
+  font-size: 1rem;
+  flex: 1;
+}
+
+.search-box button {
+  background: linear-gradient(45deg, #6c10bd, #9b4dff);
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.search-box button:hover {
+  background: linear-gradient(45deg, #9b4dff, #6c10bd);
+}
+
+/* Responsive Hero */
+@media screen and (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+  }
+  .search-box input, .search-box select, .search-box button {
+    width: 100%;
+  }
+}
+
+/* ===== Events Section ===== */
+.events {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.events h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #2c3e50;
+  font-weight: 700;
+}
+
+.event-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  text-decoration: none;
+  color: black;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.card h3 {
+  padding: 15px 10px 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #6c10bd;
+}
+
+.card p {
+  padding: 0 10px 15px;
+  font-size: 14px;
+  color: #555;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+/* ===== Footer CTA ===== */
+.event-promo-footer {
+  background: linear-gradient(135deg, #2e0d72, #6c10bd);
+  color: white;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.footer-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+.illustration-area img {
+  max-width: 500px;
+  height: auto;
+}
+
+.text-and-button-area h2 {
+  font-size: 2.5em;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.text-and-button-area p {
+  font-size: 1.1em;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.create-event-button {
+  background-color: #9b4dff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  animation: pulse 2s infinite;
+}
+
+.create-event-button:hover {
+  background-color: #6c10bd;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Responsive Footer */
+@media (min-width: 768px) {
+  .footer-content-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    text-align: left;
+  }
+
+  .illustration-area {
+    flex-basis: 40%;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .text-and-button-area {
+    flex-basis: 60%;
+    padding-left: 50px;
+  }
+}
